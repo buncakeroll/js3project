@@ -1,0 +1,77 @@
+.add-recipe-form {
+    padding: 2em;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.add-recipe-form form {
+    display: flex;
+    flex-direction: column;
+}
+  
+.form-control {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+  
+ul li {
+    margin-bottom: 5px;
+}
+
+label:not(:first-child) {
+    margin: 2em 0 1em 0;
+}
+
+label:first-child {
+    margin: 0 0 1em 0;
+}
+
+
+  
+textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 16px;
+    color: #FFFFFF;
+    background-color: #313438;
+    border: 1px solid #313438;
+    border-radius: 5px;
+    max-width: max-content;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    color: #313438;
+    background-color: transparent;
+}
+
+.btn-add {
+    font-size: 1.1em;
+    width: 100%;
+    max-width: none;
+    padding: 1em;
+    margin-top: 2em;
+    background-color: #319cff;
+    border: 1px solid #319cff;
+}
+
+.btn-add:hover {
+    color: #319cff;
+    background-color: transparent;
+    border: 1px solid #319cff;
+}

@@ -1,0 +1,22 @@
+<div class="login-container">
+  <div *ngIf="auth.user | async as user; else login">
+    <h1>Welcome, {{ user.email }}</h1>
+    <div class="login-btns__div">
+      <button (click)="logout()">Logout</button>
+      <!-- <button (click)="resetPassword()">Reset password</button> -->
+    </div>
+  </div>
+  <ng-template #login>
+    <div class="login-box">
+      <h1>Login to continue</h1>
+      <input type="email" [(ngModel)]="email" placeholder="Enter E-Mail" />
+      <input
+        type="password"
+        [(ngModel)]="password"
+        placeholder="Enter Password"
+      />
+      <button (click)="loginWithEmail()">Login</button>
+      <button routerLink="/create">Create Account</button>
+    </div>
+  </ng-template>
+</div>

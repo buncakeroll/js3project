@@ -1,0 +1,72 @@
+<h1>Edit Recipe</h1>
+<div class="edit-recipe-form">
+  <form>
+    <p>
+      Current Recipe Name: <i>{{ recipeName }}</i>
+    </p>
+    <label for="recipeName"
+      >New Recipe Name: <b>{{ newRecipeName }}</b></label
+    >
+    <input
+      type="text"
+      id="recipeName"
+      name="recipeName"
+      class="form-control"
+      [(ngModel)]="newRecipeName"
+      placeholder="New recipe name"
+    />
+    <!-- <button>Save new name</button> -->
+
+    <!-- Duration -->
+    <p>
+      Current Recipe Duration: <i>{{ duration }}</i>
+    </p>
+    <label for="duration"
+      >New duration: <b>{{ newDuration }}</b></label
+    >
+    <input
+      type="text"
+      id="duration"
+      name="duration"
+      class="form-control"
+      [(ngModel)]="newDuration"
+      placeholder="New duration"
+    />
+    <!-- <button>Save new duration</button> -->
+
+    <!-- Ingredients -->
+    <p>Current Ingredients:</p>
+    <ul>
+      <li *ngFor="let ingredient of newAllIngredients">{{ ingredient }}</li>
+    </ul>
+    <label for="ingredient">New ingredients:</label>
+    <input
+      type="text"
+      name="ingredient"
+      class="form-control"
+      [(ngModel)]="newIngredient"
+      placeholder="Enter ingredient"
+    />
+    <button (click)="addIngredient()">Add new ingredient</button>
+
+    <!-- Steps -->
+    <p>Current Steps:</p>
+    <ol>
+      <li *ngFor="let step of newAllSteps">{{ step }}</li>
+    </ol>
+    <label for="step">New steps:</label>
+    <textarea
+      rows="5"
+      name="steps"
+      class="form-control"
+      [(ngModel)]="newStep"
+      placeholder="Enter step"
+    ></textarea>
+    <button (click)="addStep()">Add new step</button>
+
+    <!-- Add Recipe Button -->
+    <button class="btn-edit" (click)="saveEditedRecipe()">
+      Save edited recipe
+    </button>
+  </form>
+</div>

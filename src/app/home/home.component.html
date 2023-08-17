@@ -1,0 +1,43 @@
+<!--LIST OF RECIPES-->
+<h1>Recipes List</h1>
+
+<!-- <ul>
+    <li *ngFor="let recipe of recipes$ | async">
+      <h2>{{ recipe.name }}</h2>
+      <p>Duration: {{ recipe.duration }} minutes</p>
+      <p>Ingredients: {{ recipe.ingredients.join(', ') }}</p>
+      <p>Steps:</p>
+      <ul>
+        <li *ngFor="let step of recipe.steps">{{ step }}</li>
+      </ul>
+    </li>
+</ul> -->
+
+<div class="recipe-list-container">
+  <ul class="recipe-list">
+    <li class="recipe-item" *ngFor="let recipe of recipes$ | async">
+      <!-- <h2>{{ recipe.id }}</h2> -->
+      <h2>{{ recipe.name }}</h2>
+      <p><strong>Duration:</strong> {{ recipe.duration }} minutes</p>
+      <p><strong>Ingredients:</strong></p>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+      </ul>
+      <p><strong>Steps:</strong></p>
+      <ol>
+        <li *ngFor="let step of recipe.steps">{{ step }}</li>
+      </ol>
+      <!-- We need <div *ngIf="recipe.owner == userId" > -->
+      <div>
+        <h1></h1>
+        <!-- <button id="edit" routerLink="/edit">Edit Recipe</button> -->
+        <button id="edit" [routerLink]="['/edit', recipe.id]">
+          Edit Recipe
+        </button>
+        <button id="deleteButton" (click)="deleteRecipe(recipe.id)">
+          Delete recipe
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

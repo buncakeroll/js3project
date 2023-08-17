@@ -1,0 +1,16 @@
+<!-- Chris added on Aug 13 -->
+<h1>Welcome! Create a new account.</h1>
+<div>
+  <nav>
+    <h1>Enter account details</h1>
+    <input type="email" [(ngModel)]="email" placeholder="Email" />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="Create password"
+    />
+    <button (click)="signUp()">Create account</button>
+    <h1></h1>
+    <button routerLink="/login">Go back to login</button>
+  </nav>
+</div>

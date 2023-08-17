@@ -1,0 +1,54 @@
+<h1>Add A Recipe</h1>
+<div class="add-recipe-form">
+  <form>
+    <!-- Recipe Name -->
+    <label for="recipeName">Recipe Name:</label>
+    <input
+      type="text"
+      id="recipeName"
+      name="recipeName"
+      class="form-control"
+      [(ngModel)]="recipeName"
+      placeholder="Recipe Name"
+    />
+    <!-- Duration -->
+    <label for="duration">Duration:</label>
+    <input
+      type="text"
+      id="duration"
+      name="duration"
+      class="form-control"
+      [(ngModel)]="duration"
+      placeholder="Duration"
+    />
+
+    <!-- Ingredients -->
+    <label>Ingredients:</label>
+    <!-- Use a structural directive (ngIf) to loop through the array of ingredients for the recipe that the user will add. -->
+    <li *ngFor="let ingredient of allIngredients">{{ ingredient }}</li>
+    <input
+      type="text"
+      name="ingredient"
+      class="form-control"
+      [(ngModel)]="nextIngredient"
+      placeholder="Enter ingredient"
+    />
+    <button (click)="addIngredient()">Add Ingredient</button>
+
+    <!-- Steps -->
+    <label>Steps:</label>
+    <!--  Use a structural directive (ngLoop) to loop  through the array of steps in the recipe. -->
+    <li *ngFor="let step of allSteps">{{ step }}</li>
+    <textarea
+      rows="5"
+      name="steps"
+      class="form-control"
+      [(ngModel)]="nextStep"
+      placeholder="Enter step"
+    ></textarea>
+    <button (click)="addStep()">Add Step</button>
+
+    <!-- Add Recipe Button -->
+    <button class="btn-add" (click)="addRecipe()">Add Recipe</button>
+  </form>
+</div>
